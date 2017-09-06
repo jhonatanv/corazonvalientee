@@ -1,0 +1,156 @@
+
+<div ng-controller="controladorUsuario" ng-show="accesos">
+
+	<table>
+		<tr>
+			<td><label>Cedula</label></td>
+			<td><input type="number" ng-model="cedula"> <button type="button"
+		ng-click="buscarUsuario()" id="buscarEntrevista">Buscar</button></td>
+		</tr>
+
+		<tr>
+			<td><label>Imagen</label></td>	
+		
+		<td>
+        <input type="file" ng-model="fotosel" ng-click="cambiarImg()" accept="image/*" multiple app-filereader /><br />
+        <img  id="foto" ng-repeat="image in fotosel" ng-src="{{image}}" width="150" height="150"/>
+        <img id="fotoB" ng-if="foto!=''" ng-src="{{'data:image/png;base64,'+foto}}" width="150" height="150" />
+		</td>	
+		
+		</tr>
+		<tr>
+			<td><label>nombre</label></td>
+			<td><input type="text" ng-model="nombre"></td>
+		</tr>
+		<tr>
+			<td><label>alias</label></td>
+			<td><input type="text" ng-model="alias"></td>
+		</tr>
+		<tr>
+			<td><label>genero</label></td>
+			<td><select ng-model="genero" id="genero">
+	<option value="">Seleccione una opcion</option>
+	<option value="masculino">Masculino</option>
+	<option value="femenino">Femenino</option>
+	
+		</tr>
+		<tr>
+			<td><label>Ciudad Nacimiento</label></td>
+		<td>
+			<select id="ciudades" ng-model="ciudadNacimiento" ng-options="c as c.nombre for c in ciudades">
+			<option value="">Seleccione una opcion</option>
+		</td>
+		</tr>
+		<tr>
+			<td><label>Fecha Nacimiento</label></td>
+			<td><input type="date" ng-model="fechaNacimiento" ></td>
+		</tr>
+		<tr>
+			<td><label>Fecha Ingreso</label></td>
+			<td><input type="date" ng-model="fechaIngreso"> </td>
+		</tr>
+		<tr>
+			<td><label>Adiccion</label></td>
+			<td><input type="text" ng-model="adiccion"></td>
+		</tr>
+		<tr>
+			<td><label>Tiempo Adiccion</label></td>
+			<td><input type="text" ng-model="tiempoAdiccion"></td>
+		</tr>
+		<tr>
+			<td><label>Acceso a Adiccion</label></td>
+			<td><input type="text" ng-model="accesoAAdiccion"></td>
+		</tr>
+		<tr>
+			<td><label>Antecedentes</label></td>
+			<td><textarea type="text" ng-model="antecedentes"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Problema Judicial</label></td>
+			<td><textarea type="text" ng-model="problemaJudicial"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Profesion</label></td>
+			<td><input type="text" ng-model="profesion"></td>
+		</tr>
+		<tr>
+		<td><label>Estado Civil</label></td>
+		<td>
+	<select ng-model="estadoCivil" id="estadoCivil">
+	<option value="">Seleccione una opcion</option>
+	<option value="soltero">Soltero</option>
+	<option value="casado">Casado</option>
+	<option value="viudo">Viudo</option>
+	<option value="union libre">Union libre</option>
+	
+	
+		
+			
+			</td>
+		</tr>
+		<tr>
+			<td><label>Numero Hijos</label></td>
+			<td><input type="number" ng-model="numeroHijos"></td>
+		</tr>
+		<tr>
+			<td><label>Estudios</label></td>
+			<td><textarea type="text" ng-model="estudios"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Instituciones</label></td>
+			<td><textarea type="text" ng-model="instituciones"> </textarea></td>
+		</tr>
+		<tr>
+			<td><label>Tipo Ingreso</label></td>
+			<td><input type="text" ng-model="tipoIngreso"></td>
+		</tr>
+		<tr>
+			<td><label>Motivo Retiro</label></td>
+			<td><textarea type="text" ng-model="motivoRetiro"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Descripcion Ingreso</label></td>
+			<td><textarea type="text" ng-model="descripcionIngreso"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>descripcionGeneral</label></td>
+			<td><textarea type="text" ng-model="descripcionGeneral"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Modalidad</label></td>
+			<td><select ng-model="modalidad" id="modalidad">
+	<option value="">Seleccione una opcion</option>
+	<option value="aporte">Aporte</option>
+	<option value="autogestion">Autogestion</option></td>
+		</tr>
+		<tr>
+			<td><label>Valor</label></td>
+			<td><input type="number" ng-model="valor"></td>
+		</tr>
+		<tr>
+			<td><label>Etapa</label></td>
+			<td><select ng-model="etapa" id="etapa">
+	<option value="">Seleccione una opcion</option>
+	<option value="acogida">Acogida</option>
+	<option value="identificacion">Identificacion</option>
+	<option value="elaboracion">Elaboracion</option>
+	<option value="consolidacion">Consolidacion</option>
+	<option value="servicio social">Servicio social</option>
+	<option value="desprendimiento gradual">Desprendimiento gradual</option>
+	<option value="reeducado">Reeducado</option></td>
+		</tr>
+		<tr>
+			<td><label>Acudiente</label></td>
+			<td><input type="text" ng-model="acudiente"></td>
+		</tr>
+		<tr>
+			<td><label>Celular Acudiente</label></td>
+			<td><input type="text" ng-model="celularAcudiente"></td>
+		</tr>
+	</table>
+	<button type="button"
+		ng-click="registrarEntrevista()" id="crearEntrevista">Crear</button>
+	
+		<button type="button"
+		ng-click="editarEntrevista()" id="editarEntrevista">Editar</button>
+</div>

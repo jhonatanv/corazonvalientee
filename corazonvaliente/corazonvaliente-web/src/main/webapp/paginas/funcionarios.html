@@ -1,0 +1,122 @@
+	<div ng-controller="controladorFuncionarios" ng-show="accesos">
+	
+	<table >
+	<tr>
+	<td>
+	<label>Cedula</label>
+	</td>
+	<td>
+	<input type="text" ng-model="cedula"> <input type="button" value="Buscar" ng-click="buscar()">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Cargo</label>
+	</td>
+	<td>
+	<select ng-model="cargo" ng-options="c as c.nombre for c in cargos">
+	<option value="">Seleccione una opcion</option>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Nombre</label>
+	</td>
+	<td>
+	<input type="text" ng-model="nombre">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Usuario</label>
+	</td>
+	<td>
+	<input type="text" ng-model="usuarioL">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Contrasenia</label>
+	</td>
+	<td>
+	<input type="password" ng-model="contrasenia">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Confirmar contrasenia</label>
+	</td>
+	<td>
+	<input type="password" ng-model="contraseniaVerificar">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Telefono</label>
+	</td>
+	<td>
+	<input type="tel" ng-model="telefono">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Fecha Ingreso</label>
+	</td>
+	<td>
+	<input type="date"  ng-model="fechaIngreso">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Tipo Contrato</label>
+	</td>
+	<td>
+
+
+	<select ng-model="tipoContrato" id="contrato">
+	<option value="">Seleccione una opcion</option>
+	<option value="prestacion de servicios">Prestacion de servicios</option>
+	<option value="voluntariado">Voluntariado</option>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Eps</label>
+	</td>
+	<td>
+	<input type="text" ng-model="eps">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Salario</label>
+	</td>
+	<td>
+	<input type="number" ng-model="salario">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Sede</label>
+	</td>
+	<td>
+	<select id="prueba" ng-model="sede" ng-options="c as c.nombre for c in sedes">
+	<option id="prueba2" value="">Seleccione una opcion</option>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Estado</label>
+	</td>
+	<td>
+	<input type="text" ng-model="estado" id="estado" readonly="readonly">
+	</td>
+	</tr>
+	</table>
+	
+	<input type="button" value="Registrar" ng-click="crear()">	<input type="button" value="Editar" ng-click="editar()">  <input type="button" value="Eliminar" ng-click="eliminar()">
+	
+	
+
+	
+</div>

@@ -1,0 +1,56 @@
+	<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+<div ng-controller="controladorSeguimientos" ng-show="accesos">
+
+	<table>
+
+		<tr>
+			<td><label>Usuario</label></td>
+			<td><input type="text" ng-model="usuario"></td>
+		</tr>
+		<tr>
+			<td><label>Fecha</label></td>
+			<td><input type="date" ng-model="fecha"></td>
+		</tr>
+		<tr>
+			<td><label>Observacion</label></td>
+			<td><textarea type="text" ng-model="observacion"></textarea></td>
+		</tr>
+	</table>
+	<input type="button" value="Registrar" ng-click="crear()"> <input
+		type="button" value="Buscar" ng-click="buscarSeguimientos()">
+			<br><br><br>
+		
+<aside>
+<div id="muestra">
+				<h3>SEGUIMIENTO USUARIOS COVAL</h3>
+<div id="div1">
+	<table>
+		<thead>
+			<tr>
+				<th>Usuario</th>
+				<th>Cedula</th>
+				<th>Fecha seguimiento</th>
+				<th>Observaciones</th>
+				<th>Funcionario</th>
+				<th>Sede</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="s in seguimientos">
+				<td>{{s.usuario.nombre}}</td>
+				<td>{{s.usuario.cedula}}</td>
+				<td>{{s.fecha}}</td>
+				<td>{{s.observacion}}</td>
+				<td>{{s.funcionario.nombre}}</td>
+				<td>{{s.sede.nombre}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+	<a href="javascript:imprSelec('muestra')"><button>Imprimir</button></a>
+	</aside>
+</div>

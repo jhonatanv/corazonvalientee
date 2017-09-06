@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Coval</title>
+<link rel="shortcut icon" href="resources/image/icono2.ico" type="image/x-icon" />
+<link rel="stylesheet" href="resources/css/style.css" />
+
+
+<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="resources/js/material.min.js"></script>
+
+
+<!-- Librerias de Angular -->
+<script type="text/javascript" src="resources/js/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/angular-route.js"></script>
+<script type="text/javascript" src="resources/js/ngStorage.min.js"></script>
+
+<script type="text/javascript" src="controlador/app.js"></script>
+<script type="text/javascript" src="controlador/loginController.js"></script>
+
+
+</head>
+
+
+
+<body ng-app="miApp"
+	style="background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed;">
+	<main>
+	<div ng-controller="loginController">
+
+
+
+
+
+
+			<center>
+			<h1>Log-in</h1>
+			</center>
+			<br>
+<form>
+	<center>
+		<table>		
+			<tr>
+				<td colspan="1" align="center">
+					<img src="resources/image/LOGOO.png" width="120" height="auto" style="text-align: center;">
+				</td>				
+			</tr>
+			<tr>
+				<td>
+					<input type="text" name="user" placeholder="Username" ng-model="user"> 
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input				
+					type="password" name="pass" placeholder="Password" ng-model="pass"> 					
+				</td>
+			</tr>
+			
+			<tr>				
+				<td>
+				<center>
+					<input
+					type="submit" name="login" value="login" ng-click="login()">
+				</center>
+				</td>
+			</tr>
+				
+			
+		</table>
+	</center>
+</form>
+
+	</div>
+</main>
+
+
+</body>
+<script type="text/javascript">
+	$.material.init() 
+</script>
+</html>

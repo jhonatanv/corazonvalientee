@@ -1,0 +1,71 @@
+<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+
+<div ng-controller="controladorAportes" ng-show="accesos">
+
+	<table>
+		<tr>
+			<td><label>Usuario</label></td>
+			<td><input type="number" ng-model="cedula"></td>
+		</tr>
+		<tr>
+			<td><label>descripcion</label></td>
+			<td><textarea type="text" ng-model="descripcion"></textarea></td>
+		</tr>
+		<tr>
+			<td><label>Valor a Cancelar</label></td>
+			<td><input type="number" ng-model="valor"></td>
+		</tr>
+	</table>
+	<input type="button" value="Registrar" ng-click="crearAporte()">
+	<input type="button" value="Buscar" ng-click="listarAportesSede()">
+	<br><br><br>
+	<aside>
+	
+	
+		
+	<div id="muestra">	
+	<h3>APORTES</h3>
+	<div id="div1">
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Cedula</th>
+				<th>Fecha aporte</th>
+				<th>Descripcion</th>
+				<th>Valor cancelado</th>
+				<th>Sede</th>
+				<th>Deuda</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="a in aportes">
+				<td>{{a.usuario.nombre}}</td>
+				<td>{{a.usuario.cedula}}</td>
+				<td>{{a.fechaAporte}}</td>
+				<td>{{a.descripcion}}</td>
+				<td>{{a.valorCancelado}}</td>
+				<td>{{a.sede.nombre}}</td>
+				<td>{{a.usuario.valor}}</td>
+				<td></td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>Total</td>
+				<td ng-bind="total"></td>
+				<td>Deuda</td>
+				<td ng-bind="deuda"></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+	<a href="javascript:imprSelec('muestra')"><button>Imprimir</button></a>
+	</aside>
+</div>

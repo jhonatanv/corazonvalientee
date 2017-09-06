@@ -1,0 +1,51 @@
+	<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+	<div ng-controller="controladorDiferencia" ng-show="accesos">
+	<table >
+	<tr>
+	<td>
+	<label>Ingresos: </label>
+	</td>
+	<td>
+	<input type="number" ng-model="ingreso" readonly="readonly">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Egresos: </label>
+	</td>
+	<td>
+	<input type="number" ng-model="egreso" readonly="readonly">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Total: </label>
+	</td>
+	<td>
+	<input type="number" ng-model="total" readonly="readonly">
+	</td>
+	</tr>
+	
+	</table>
+			</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

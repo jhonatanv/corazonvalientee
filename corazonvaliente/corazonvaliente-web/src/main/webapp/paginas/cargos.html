@@ -1,0 +1,33 @@
+<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+
+	<div ng-controller="controladorCargos" ng-show="accesos">
+	
+	<table >
+	<tr>
+	<td>
+	<label>Nombre</label>
+	</td>
+	<td>
+	<input type="text" ng-model="nombre">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>descripcion</label>
+	</td>
+	<td>
+	<textarea type="text" ng-model="descripcion"></textarea>
+	</td>
+	</tr>
+</table>
+	
+		<input type="button" value="Registrar" ng-click="crear()">	<input type="button" value="Editar" ng-click="editar()">
+	
+	 <input type="button" value="Buscar" ng-click="buscar()">
+
+	
+	
+</div>

@@ -1,0 +1,80 @@
+	<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+	<div ng-controller="controladorSedes" ng-show="accesos">
+		
+	
+	<table >
+	<tr>
+	<td>
+	<label>Ciudad</label>
+	</td>
+	<td>
+	<select ng-model="ciudad" ng-options="c as c.nombre for c in ciudades">
+	<option value="">Seleccione una opcion</option>
+	</select>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Nombre</label>
+	</td>
+	<td>
+	<input type="text" ng-model="nombre">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Telefono</label>
+	</td>
+	<td>
+	<input type="number" ng-model="telefono">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Direccion</label>
+	</td>
+	<td>
+	<textarea type="text" ng-model="direccion"></textarea>
+	</td>
+	</tr>	
+	</table>
+	
+		<input type="button" value="Registrar" ng-click="crear()">	<input type="button" value="Editar" ng-click="editar()"> 
+	
+	 <input type="button" value="Buscar" ng-click="buscar()">
+	<br><br><br><br>
+	<aside>
+	<div id="muestra">
+				<h3>SEDES CORAZON VALIENTE</h3>
+	<div id="div1">
+	<table >
+			<thead>
+				<tr>
+					<th>NOMBRE</th>
+					<th>CIUDAD</th>
+					<th>TELEFONO</th>
+					<th>DIRECCION</th>
+					
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in sedes">
+						<td>{{s.nombre}}</td>
+						<td>{{s.ciudad.nombre}}</td>
+						<td>{{s.telefono}}</td>
+						<td>{{s.direccion}}</td>
+						
+						
+					</tr>
+				
+			</tbody>
+		</table>
+		</div>
+		</div>
+		<a href="javascript:imprSelec('muestra')"><button>Imprimir</button></a>
+	</aside>
+</div>

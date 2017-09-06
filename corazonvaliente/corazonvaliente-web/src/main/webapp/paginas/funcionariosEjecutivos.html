@@ -1,0 +1,54 @@
+<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+	<div ng-controller="controladoFuncionariosEjecutivos" ng-show="accesos">
+	<aside>
+	<div id="muestra">
+				<h3>FUNCIONARIOS EJECUTIVOS COVAL</h3>
+	<div id="div1">
+	<table>
+			<thead>
+				<tr>
+					<th>CEDULA</th>
+					<th>CARGO</th>
+					<th>NOMBRE</th>
+					<th>TELEFONO</th>
+					<th>FECHA INGRESO</th>
+					<th>TIPO CONTRATO</th>
+					<th>EPS</th>
+					<th>SALARIO</th>
+					<th>ESTADO</th>
+					
+				
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="s in funcionarios">
+						<td>{{s.cedula}}</td>
+						<td>{{s.cargo.nombre}}</td>
+						<td>{{s.nombre}}</td>
+						<td>{{s.telefono}}</td>
+						<td>{{s.fechaIngreso}}</td>
+						<td>{{s.tipoContrato}}</td>
+						<td>{{s.eps}}</td>
+						<td>{{s.salario}}</td>
+						<td>{{s.estado}}</td>
+					
+						
+						
+					</tr>
+				
+			</tbody>
+		</table>
+		</div>
+		</div>
+		<br><br><br>
+		<label>cedula</label> 
+		<input type="number" ng-model="cedula"> <input type="button" value="Activar" ng-click="activar()">
+		<input type="button" value="Desactivar" ng-click="desactivar()">
+		<a href="javascript:imprSelec('muestra')"><button>Imprimir</button></a>
+	
+</aside>
+</div>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Corazon Valiente</title>
+<!-- The below script Makes IE understand the new html5 tags are there and applies our CSS to it -->
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="resources/css/style.css" />
+<link rel="stylesheet" href="resources/css/Estilos.css" />
+<link rel="shortcut icon" href="resources/image/icono2.ico" type="image/x-icon" />
+
+
+
+<script type="text/javascript" src="resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="resources/js/material.min.js"></script>
+
+
+<!-- Librerias de Angular -->
+<script type="text/javascript" src="resources/js/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/angular-route.js"></script>
+<script type="text/javascript" src="controlador/app.js"></script>
+
+
+<script type="text/javascript"
+	src="controlador/controladorListarUsuarios.js"></script>
+<script type="text/javascript"
+	src="controlador/controladorListarFuncionarios.js"></script>
+<script type="text/javascript" src="controlador/controladorUsuario.js"></script>
+<script type="text/javascript" src="controlador/controladorAportes.js"></script>
+<script type="text/javascript" src="controlador/controladorEgresos.js"></script>
+<script type="text/javascript" src="controlador/controladorFichas.js"></script>
+<script type="text/javascript"
+	src="controlador/controladorFuncionarios.js"></script>
+<script type="text/javascript" src="controlador/controladorIngresos.js"></script>
+<script type="text/javascript" src="controlador/controladorSedes.js"></script>
+<script type="text/javascript"
+	src="controlador/controladorSeguimientos.js"></script>
+<script type="text/javascript" src="controlador/controladorTraslados.js"></script>
+<script type="text/javascript"
+	src="controlador/controladorTrasladosFuncionarios.js"></script>
+<script type="text/javascript"
+	src="controlador/controladorBuscarInactivos.js"></script>
+<script type="text/javascript" src="controlador/controladorCargos.js"></script>
+<script type="text/javascript" src="controlador/controladorFuncionariosEjecutivos.js"></script>
+
+<script type="text/javascript" src="controlador/controladorDiferencia.js"></script>
+
+
+<script type="text/javascript" src="controlador/menuController.js"></script>
+
+	
+	<script type="text/javascript" src="resources/js/ngStorage.min.js"></script>
+	
+
+</head>
+
+
+
+<header class="banner">
+    <hgroup>
+    <div id="contenedor">
+       <div >
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       </div>
+	</div >
+        
+    </hgroup>
+  </header>
+
+<body ng-app="miApp">
+	<section>
+		<h1>MENU</h1>
+		<div ng-controller="menuController" ng-show="accesos">
+			<ul>
+				<li ng-repeat="rut in rutas2"><a
+					ng-if="rut.url !='#/elegirSede'" ng-href="{{rut.url}}"> {{
+						rut.nombre }}</a></li>
+				<input type="button" ng-click="seleccionarSede()" value="Seleccionar sede" ng-show="selecSede" style="width:140px"></input>
+				<input type="button" ng-click="cerrarSesion()" value="Cerrar sesion" style="width:140px"></input>
+			</ul>
+		</div>
+	</section>
+	<article>
+		<div ng-view></div>
+	</article>
+
+	<script type="text/javascript">
+		$.material.init()
+	</script>
+
+
+
+
+	<footer class="footer" >
+		<p>
+			<a href="https://www.facebook.com/CorporacionCorazonValiente/" target="_blank"><img src="resources/image/facebook.png" width="50px" height="50px" style="text-align: center;"></a>
+			<a href="https://www.instagram.com/corpcoval/" target="_blank"><img src="resources/image/instagram.png" width="50px" height="50px" style="text-align: center;"></a>
+			<a href="https://corporacioncorazon.wixsite.com/corpcoval" target="_blank"><img src="resources/image/iconoWeb.png" width="60px" height="50px" style="text-align: center;"></a>
+			<a href="https://twitter.com/CorpCoVal" target="_blank"><img src="resources/image/gorjeo.png" width="50px" height="50px" style="text-align: center;"></a>
+			
+		</p>
+	</footer>
+</body>
+</html>

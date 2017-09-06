@@ -1,0 +1,89 @@
+<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+<div ng-controller="controladorFichas" ng-show="accesos">
+
+	<table>
+		<tr>
+			<td><label>Usuario</label></td>
+			<td><input type="number" ng-model="cedula"><input
+				type="button" value="Buscar" ng-click="buscarUsuario()"></td>
+		</tr>
+
+		<tr>
+			<td><label>Nombre</label></td>
+			<td><input type="text" ng-model="nombre" readonly></td>
+		</tr>
+
+		<tr>
+			<td colspan="2" style="text-align: center"><img id="fotoB"
+				ng-if="fotoB !='' " ng-src="{{'data:image/png;base64,'+fotoB}}"
+				width="150" height="150" /></td>
+		</tr>
+
+
+		<tr>
+			<td colspan="2" style="text-align: center"><label>Crear
+					Ficha</label></td>
+		</tr>
+		<tr>
+			<td><label>Codigo Ficha</label></td>
+			<td><input type="number" ng-model="codigo"></td>
+		</tr>
+		<tr>
+			<td><label>Fecha Salida</label></td>
+			<td><input type="date" ng-model="fechaSalida"></td>
+		</tr>
+		<tr>
+			<td><label>Observacion</label></td>
+			<td><textarea ng-model="observacion"></textarea></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="Registrar"
+				ng-click="registarFicha()"></td>
+			<td><input type="button" value="Cancelar" ng-click="cancelar()">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align: center">
+				<div>					
+					<br>
+					<aside>
+					<div id="muestra">
+				<h3>SALIDAS DE USUARIOS CORAZON VALIENTE</h3>
+					<div id="div1">
+						<table>
+							<thead>
+								<tr>
+									<th>Codigo ficha</th>
+									<th>Fecha entrada</th>
+									<th>Fecha salida</th>
+									<th>Sede</th>
+									<th>Observaciones</th>
+									<th>Estado</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="f in fichas">
+									<td>{{f.codigo}}</td>
+									<td>{{f.fechaEntrada}}</td>
+									<td>{{f.fechaSalida}}</td>
+									<td>{{f.sede.nombre}}</td>
+									<td>{{f.observacion}}</td>
+									<td ng-if="f.estadoUsuario==true">Activo</td>
+									<td ng-if="f.estadoUsuario==false">Inactivo</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						</div>
+						<a href="javascript:imprSelec('muestra')"><button>Imprimir</button></a>
+					</aside>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+
+</div>

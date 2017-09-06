@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sedes</title>
+
+<link rel="stylesheet" href="../resources/css/style.css" />
+<link rel="shortcut icon" href="resources/image/icono2.ico" type="image/x-icon" />
+
+<script type="text/javascript"
+	src="../resources/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../resources/js/material.min.js"></script>
+
+
+<!-- Librerias de Angular -->
+<script type="text/javascript" src="../resources/js/angular.min.js"></script>
+<script type="text/javascript" src="../resources/js/angular-route.js"></script>
+<script type="text/javascript" src="../resources/js/ngStorage.min.js"></script>
+
+
+<script type="text/javascript" src="../controlador/app.js"></script>
+<script type="text/javascript"
+	src="../controlador/controladorElegirSedes.js"></script>
+
+
+</head>
+
+
+
+<body ng-app="miApp"
+	style="background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#cbccc8)) fixed;">
+	<div class="container" ng-controller="controladorElegirSedes" ng-show="accesos">
+
+<h6>
+<center>
+		<h1>Elegir Sede</h1>
+		
+		<br>
+		<form>
+
+			<select ng-model="sede" ng-options="c as c.nombre for c in sedes">
+				<option value="">Seleccione una opcion</option>
+				<input type="submit" ng-click="elegirSede()" value="seleccionar">
+				
+		</form>
+</center>
+</h6>
+	</div>
+
+
+
+</body>
+<script type="text/javascript">
+	$.material.init()
+</script>
+</html>

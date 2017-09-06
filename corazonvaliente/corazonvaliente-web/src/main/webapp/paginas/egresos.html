@@ -1,0 +1,119 @@
+<script type="text/javascript">
+function imprSelec(muestra)
+{var ficha=document.getElementById(muestra);var ventimp=window.open(' ','popimpr');ventimp.document.write(ficha.innerHTML);ventimp.document.close();ventimp.print();ventimp.close();}
+</script>
+	<div ng-controller="controladorEgresos" ng-show="accesos">
+	
+	<table >
+	
+	<tr>
+	<td>
+	<label>Numero Factura</label>
+	</td>
+	<td>
+	<input type="text" ng-model="numeroFactura">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Fecha Egreso</label>
+	</td>
+	<td>
+	<input type="date" ng-model="fechaEgreso">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Cuenta</label>
+	</td>
+	<td>
+	<input type="text" ng-model="cuenta">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Nit</label>
+	</td>
+	<td>
+	<input type="text" ng-model="nit">
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Concepto</label>
+	</td>
+	<td>
+	<textarea type="text" ng-model="concepto"></textarea>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<label>Valor</label>
+	</td>
+	<td>
+	<input type="number" ng-model="valor">
+	</td>
+	</tr>	
+	</table>
+	
+		<input type="button" value="Registrar" ng-click="crear()">	<input type="button" value="Editar" ng-click="editar()">  <input type="button" value="Eliminar" ng-click="eliminar()">
+		
+			<br><br><br><br>
+			<label>Anio</label>
+			
+        	<input type="number" ng-model="ano" min="2000" max="2060" ng-model="ano">
+	<br><br>
+	<label>Mes</label>
+			
+        	<input type="number" ng-model="mes" min="1" max="12" ng-model="mes"> <input type="button" value="Listar" ng-click="listarEgresos()" />
+        	<br><br>
+        	<aside>
+        	<div id="muestra">
+				<h3>EGRESOS</h3>
+        	<div id="div1">
+		<table>
+			<thead>
+				<tr>
+					
+			<th>NUMERO FACTURA</th>
+			<th>FECHA EGRESO</th>
+			<th>CUENTA</th>
+			<th>NIT</th>
+		    <th>CONCEPTO</th>
+			<th>VALOR</th>
+			<th>BUSCAR</th>
+			
+					
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="e in egresos">
+						<td>{{e.numeroFactura}}</td>
+						<td>{{e.fechaEgreso}}</td>
+						<td>{{e.cuenta}}</td>
+						<td>{{e.nit}}</td>
+						<td>{{e.concepto}}</td>
+						<td>{{e.valor}}</td>
+						<td><input type="button" value="buscar" ng-click="buscar(e.codigo)" /></td>
+						
+						
+					</tr>
+					
+					<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>Total :</td>
+				<td ng-bind="total"></td>
+			</tr>
+				
+			</tbody>
+		</table>
+		</div>
+		</div>
+		<a href="javascript:imprSelec('muestra')"><button>Imprimir</button></a>
+		</aside>
+	
+</div>

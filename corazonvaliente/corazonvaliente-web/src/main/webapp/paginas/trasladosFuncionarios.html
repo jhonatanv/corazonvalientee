@@ -1,0 +1,17 @@
+
+<div ng-controller="controladorTrasladosFuncionarios" ng-show="accesos">
+
+	<table>
+		<tr>
+			<td><label>Funcionario</label></td>
+			<td><input type="number" ng-model="cedula"></td>
+		</tr>
+		<tr>
+			<td><label>Sede</label></td>
+			<td><select id="sede" ng-model="sede"
+				ng-options="s as s.nombre for s in sedes">
+					<option value="">Seleccione una opcion</option></td>
+		</tr>
+	</table>
+	<input type="button" value="Trasladar" ng-click="realizarTraslado()">
+</div>
